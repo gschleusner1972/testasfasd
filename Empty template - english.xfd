@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xfd:document xmlns:xfd="http://www.ecrion.com/xfd/1.0" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xf="http://www.ecrion.com/xf/1.0" xmlns:xc="http://www.ecrion.com/2008/xc" xmlns:svg="http://www.w3.org/2000/svg" sample-xml="..\xml\rooms.xml" dt-namespaces="">
+	<xf:stylesheet src="..\stylesheets\dRofus.css"/>
+	<xfd:localization>
+		<xfd:locale language-id="en_US" language-name="English (United States)"/>
+	</xfd:localization>
+	<fo:layout-master-set>
+		<fo:simple-page-master master-name="Letter Page" page-width="215.9mm" page-height="279.4mm">
+			<fo:region-body region-name="xsl-region-body" margin="2.1cm 17.78mm 17.78mm 17.78mm"/>
+			<fo:region-before region-name="xsl-region-before" display-align="after" extent="2.4cm"/>
+			<fo:region-after region-name="xsl-region-after" extent="17.78mm"/>
+			<fo:region-start region-name="xsl-region-start" extent="17.78mm"/>
+			<fo:region-end region-name="xsl-region-end" extent="17.78mm"/>
+		</fo:simple-page-master>
+	</fo:layout-master-set>
+	<fo:page-sequence master-reference="Letter Page">
+		<fo:static-content flow-name="xsl-region-after" font-size="9pt">
+			<fo:block><fo:block>
+					<xfd:subdocument-content xfd:src="url(..\building_blocks\footer-bb.xfc)"/>
+				</fo:block> </fo:block>
+		</fo:static-content>
+		<fo:static-content flow-name="xsl-region-before" font-size="9pt">
+			<fo:block><fo:block>
+					<xfd:subdocument-content src="url(..\building_blocks\header-bb.xfc)" xf:show-as-icon="true"/>
+				</fo:block> </fo:block>
+		</fo:static-content>
+		<fo:static-content flow-name="xsl-region-end" font-size="9pt">
+			<fo:block> </fo:block>
+		</fo:static-content>
+		<fo:static-content flow-name="xsl-region-start" font-size="9pt">
+			<fo:block> </fo:block>
+		</fo:static-content>
+		<fo:flow flow-name="xsl-region-body" font-size="9pt">
+			<fo:block class="report-common"> </fo:block>
+		</fo:flow>
+	</fo:page-sequence>
+</xfd:document>
